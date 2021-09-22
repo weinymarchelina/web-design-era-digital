@@ -33,6 +33,23 @@ const showSlides = (n) => {
 
 showSlides(slideIndex);
 
-setInterval(() => {
-  plusSlides(1);
-}, 10000);
+// setInterval(() => {
+//   plusSlides(1);
+// }, 10000);
+
+const square = document.querySelector(".square");
+const navbar = document.querySelector(".navbar");
+
+square.addEventListener("click", () => {
+  if (!square.classList.contains("closed")) {
+    square.style.transform = "rotate(0deg)";
+    square.classList.add("closed");
+    navbar.classList.remove("open-nav");
+    console.log("closed");
+  } else {
+    square.style.transform = "rotate(180deg)";
+    square.classList.remove("closed");
+    navbar.classList.add("open-nav");
+    console.log("opened");
+  }
+});
